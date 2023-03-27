@@ -40,7 +40,7 @@ public class BatchSendRequest {
      * 消息相关的参数
      * 必传
      */
-    private List<MessageParam> messageParamList;
+    private List<MessageSendParam> messageSendParamList;
 
 
 }

@@ -16,9 +16,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--以下模块虽然都属于一个项目，
+        但由于是不同的模块，因此在使用时就必须引入，否则无法跨模块调用！！！
+        https://blog.csdn.net/chao_ji_cai/article/details/117779191
+        -->
         <dependency>
             <groupId>com.java3y.austin</groupId>
-            <artifactId>austin-handler</artifactId>
+            <artifactId>austin-msgSendChannelHandler</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -50,6 +54,11 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
 

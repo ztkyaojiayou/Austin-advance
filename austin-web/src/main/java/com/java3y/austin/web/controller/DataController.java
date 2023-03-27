@@ -1,8 +1,8 @@
 package com.java3y.austin.web.controller;
 
 import cn.hutool.core.util.StrUtil;
-import com.java3y.austin.web.annotation.AustinAspect;
-import com.java3y.austin.web.annotation.AustinResult;
+import com.java3y.austin.web.config.annotation.AustinAspect;
+import com.java3y.austin.web.config.annotation.AustinResult;
 import com.java3y.austin.web.service.DataService;
 import com.java3y.austin.web.vo.DataParam;
 import com.java3y.austin.web.vo.amis.EchartsVo;

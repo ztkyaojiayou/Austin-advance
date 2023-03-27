@@ -29,6 +29,8 @@ public class TaskHandlerImpl implements TaskHandler {
     @Autowired
     private MessageTemplateDao messageTemplateDao;
 
+    //该ioc容器对象是可以直接注入的！！！但并不推荐这么使用，推荐手动注入，也即通过实现ApplicationContextAware接口！
+    //参考链接：https://blog.csdn.net/weixin_52317961/article/details/128070274
     @Autowired
     private ApplicationContext context;
 

@@ -9,7 +9,7 @@ import com.java3y.austin.cron.config.CronAsyncThreadPoolConfig;
 import com.java3y.austin.cron.constants.PendingConstant;
 import com.java3y.austin.cron.vo.CrowdInfoVo;
 import com.java3y.austin.service.api.domain.BatchSendRequest;
-import com.java3y.austin.service.api.domain.MessageParam;
+import com.java3y.austin.service.api.domain.MessageSendParam;
 import com.java3y.austin.service.api.enums.BusinessCode;
 import com.java3y.austin.service.api.service.SendService;
 import com.java3y.austin.support.pending.AbstractLazyPending;
@@ -67,16 +67,16 @@ public class CrowdBatchTaskPending extends AbstractLazyPending<CrowdInfoVo> {
         }
 
         // 2. 组装参数
-        List<MessageParam> messageParams = Lists.newArrayList();
+        List<MessageSendParam> messageSendParams = Lists.newArrayList();
         for (Map.Entry<Map<String, String>, String> entry : paramMap.entrySet()) {
-            MessageParam messageParam = MessageParam.builder().receiver(entry.getValue())
+            MessageSendParam messageSendParam = MessageSendParam.builder().receiver(entry.getValue())
                     .variables(entry.getKey()).build();
-            messageParams.add(messageParam);
+            messageSendParams.add(messageSendParam);
         }
 
         // 3. 调用批量发送接口发送消息
         BatchSendRequest batchSendRequest = BatchSendRequest.builder().code(BusinessCode.COMMON_SEND.getCode())
-                .messageParamList(messageParams)
+                .messageSendParamList(messageSendParams)
                 .messageTemplateId(CollUtil.getFirst(crowdInfoVos.iterator()).getMessageTemplateId())
                 .build();
         sendService.batchSend(batchSendRequest);

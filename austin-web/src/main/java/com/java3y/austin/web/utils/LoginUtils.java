@@ -2,7 +2,7 @@ package com.java3y.austin.web.utils;
 
 import com.java3y.austin.common.constant.CommonConstant;
 import com.java3y.austin.common.constant.OfficialAccountParamConstant;
-import com.java3y.austin.web.config.WeChatLoginConfig;
+import com.java3y.austin.web.config.business.WeChatLoginConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

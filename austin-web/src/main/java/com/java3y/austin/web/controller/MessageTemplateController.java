@@ -7,16 +7,16 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.base.Throwables;
 import com.java3y.austin.common.enums.RespStatusEnum;
 import com.java3y.austin.common.vo.BasicResultVO;
-import com.java3y.austin.service.api.domain.MessageParam;
+import com.java3y.austin.service.api.domain.MessageSendParam;
 import com.java3y.austin.service.api.domain.SendRequest;
 import com.java3y.austin.service.api.domain.SendResponse;
 import com.java3y.austin.service.api.enums.BusinessCode;
 import com.java3y.austin.service.api.service.RecallService;
 import com.java3y.austin.service.api.service.SendService;
 import com.java3y.austin.support.domain.MessageTemplate;
-import com.java3y.austin.web.annotation.AustinAspect;
-import com.java3y.austin.web.annotation.AustinResult;
-import com.java3y.austin.web.exception.CommonException;
+import com.java3y.austin.web.config.annotation.AustinAspect;
+import com.java3y.austin.web.config.annotation.AustinResult;
+import com.java3y.austin.web.config.exception.CommonException;
 import com.java3y.austin.web.service.MessageTemplateService;
 import com.java3y.austin.web.utils.Convert4Amis;
 import com.java3y.austin.web.utils.LoginUtils;
@@ -127,15 +127,15 @@ public class MessageTemplateController {
 
 
     /**
-     * 测试发送接口
+     * 测试发送接口--核心！！！
      */
     @PostMapping("test")
     @ApiOperation("/测试发送接口")
     public SendResponse test(@RequestBody MessageTemplateParam messageTemplateParam) {
 
         Map<String, String> variables = JSON.parseObject(messageTemplateParam.getMsgContent(), Map.class);
-        MessageParam messageParam = MessageParam.builder().receiver(messageTemplateParam.getReceiver()).variables(variables).build();
-        SendRequest sendRequest = SendRequest.builder().code(BusinessCode.COMMON_SEND.getCode()).messageTemplateId(messageTemplateParam.getId()).messageParam(messageParam).build();
+        MessageSendParam messageSendParam = MessageSendParam.builder().receiver(messageTemplateParam.getReceiver()).variables(variables).build();
+        SendRequest sendRequest = SendRequest.builder().code(BusinessCode.COMMON_SEND.getCode()).messageTemplateId(messageTemplateParam.getId()).messageSendParam(messageSendParam).build();
         SendResponse response = sendService.send(sendRequest);
         if (!Objects.equals(response.getCode(), RespStatusEnum.SUCCESS.getCode())) {
             throw new CommonException(response.getMsg());

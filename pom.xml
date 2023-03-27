@@ -10,7 +10,7 @@
         <module>austin-service-api-impl</module>
         <module>austin-common</module>
         <module>austin-support</module>
-        <module>austin-handler</module>
+        <module>austin-msgSendChannelHandler</module>
         <module>austin-cron</module>
         <module>austin-stream</module>
         <module>austin-data-house</module>
@@ -19,6 +19,9 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
+        <!--若改成2.7.2，springboot默认不处理循环依赖的问题了，因此需要手动解决！！！
+        https://blog.csdn.net/CutelittleBo/article/details/122411294
+        -->
         <version>2.5.6</version>
         <relativePath/>
     </parent>

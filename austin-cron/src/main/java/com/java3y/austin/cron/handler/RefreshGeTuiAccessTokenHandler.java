@@ -13,7 +13,7 @@ import com.java3y.austin.common.dto.account.GeTuiAccount;
 import com.java3y.austin.common.enums.ChannelType;
 import com.java3y.austin.cron.dto.getui.GeTuiTokenResultDTO;
 import com.java3y.austin.cron.dto.getui.QueryTokenParamDTO;
-import com.java3y.austin.support.config.SupportThreadPoolConfig;
+import com.java3y.austin.support.config.threadpool.SupportThreadPoolConfig;
 import com.java3y.austin.support.dao.ChannelAccountDao;
 import com.java3y.austin.support.domain.ChannelAccount;
 import com.xxl.job.core.handler.annotation.XxlJob;

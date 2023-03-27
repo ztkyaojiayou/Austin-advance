@@ -3,7 +3,7 @@ package com.java3y.austin.cron.handler;
 import com.dtp.core.thread.DtpExecutor;
 import com.java3y.austin.cron.config.CronAsyncThreadPoolConfig;
 import com.java3y.austin.cron.service.TaskHandler;
-import com.java3y.austin.support.utils.ThreadPoolUtils;
+import com.java3y.austin.support.config.threadpool.ThreadPoolUtils;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;

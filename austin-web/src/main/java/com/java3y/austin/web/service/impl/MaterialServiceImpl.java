@@ -15,7 +15,7 @@ import com.java3y.austin.common.dto.account.EnterpriseWeChatRobotAccount;
 import com.java3y.austin.common.enums.FileType;
 import com.java3y.austin.common.enums.RespStatusEnum;
 import com.java3y.austin.common.vo.BasicResultVO;
-import com.java3y.austin.handler.domain.wechat.robot.EnterpriseWeChatRootResult;
+import com.java3y.austin.handler.common.domain.wechat.robot.EnterpriseWeChatRootResult;
 import com.java3y.austin.support.utils.AccountUtils;
 import com.java3y.austin.web.service.MaterialService;
 import com.java3y.austin.web.utils.SpringFileUtils;

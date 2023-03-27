@@ -11,7 +11,7 @@ import com.java3y.austin.common.constant.CommonConstant;
 import com.java3y.austin.common.constant.SendAccountConstant;
 import com.java3y.austin.common.dto.account.DingDingWorkNoticeAccount;
 import com.java3y.austin.common.enums.ChannelType;
-import com.java3y.austin.support.config.SupportThreadPoolConfig;
+import com.java3y.austin.support.config.threadpool.SupportThreadPoolConfig;
 import com.java3y.austin.support.dao.ChannelAccountDao;
 import com.java3y.austin.support.domain.ChannelAccount;
 import com.xxl.job.core.handler.annotation.XxlJob;

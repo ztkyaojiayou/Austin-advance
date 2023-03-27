@@ -4,7 +4,7 @@ package com.java3y.austin.web.controller;
 import com.java3y.austin.service.api.domain.SendRequest;
 import com.java3y.austin.service.api.domain.SendResponse;
 import com.java3y.austin.service.api.service.SendService;
-import com.java3y.austin.web.annotation.AustinAspect;
+import com.java3y.austin.web.config.annotation.AustinAspect;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class SendController {
 
 
     /**
-     * 发送消息接口
+     * 发送消息接口（核心接口，其中会包含使用责任链进行处理！！！）
      * 入参完整示例：curl -XPOST "127.0.0.1:8080/send"  -H 'Content-Type: application/json'  -d '{"code":"send","messageParam":{"receiver":"13788888888","variables":{"title":"yyyyyy","contentValue":"6666164180"}},"messageTemplateId":1}'
      *
      * @return

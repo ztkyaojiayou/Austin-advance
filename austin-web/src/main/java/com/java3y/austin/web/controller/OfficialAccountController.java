@@ -12,10 +12,10 @@ import com.java3y.austin.common.constant.CommonConstant;
 import com.java3y.austin.common.constant.OfficialAccountParamConstant;
 import com.java3y.austin.common.enums.RespStatusEnum;
 import com.java3y.austin.support.utils.AccountUtils;
-import com.java3y.austin.web.annotation.AustinAspect;
-import com.java3y.austin.web.annotation.AustinResult;
-import com.java3y.austin.web.config.WeChatLoginConfig;
-import com.java3y.austin.web.exception.CommonException;
+import com.java3y.austin.web.config.annotation.AustinAspect;
+import com.java3y.austin.web.config.annotation.AustinResult;
+import com.java3y.austin.web.config.business.WeChatLoginConfig;
+import com.java3y.austin.web.config.exception.CommonException;
 import com.java3y.austin.web.utils.Convert4Amis;
 import com.java3y.austin.web.utils.LoginUtils;
 import com.java3y.austin.web.vo.amis.CommonAmisVo;
@@ -39,6 +39,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 /**
+ * 登录与注册
+ *
  * 微信服务号
  *
  * @author 3y

@@ -5,7 +5,7 @@ import com.java3y.austin.service.api.domain.SendRequest;
 import com.java3y.austin.service.api.domain.SendResponse;
 
 /**
- * 发送接口
+ * 消息发送接口
  *
  * @author 3y
  */

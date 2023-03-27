@@ -5,9 +5,9 @@ import cn.hutool.core.util.StrUtil;
 import com.java3y.austin.common.constant.AustinConstant;
 import com.java3y.austin.common.enums.RespStatusEnum;
 import com.java3y.austin.support.domain.ChannelAccount;
-import com.java3y.austin.web.annotation.AustinAspect;
-import com.java3y.austin.web.annotation.AustinResult;
-import com.java3y.austin.web.exception.CommonException;
+import com.java3y.austin.web.config.annotation.AustinAspect;
+import com.java3y.austin.web.config.annotation.AustinResult;
+import com.java3y.austin.web.config.exception.CommonException;
 import com.java3y.austin.web.service.ChannelAccountService;
 import com.java3y.austin.web.utils.Convert4Amis;
 import com.java3y.austin.web.utils.LoginUtils;
@@ -58,6 +58,7 @@ public class ChannelAccountController {
 
     /**
      * 根据渠道标识查询渠道账号相关的信息
+     * todo 查询结果好像不符合预期
      */
     @GetMapping("/queryByChannelType")
     @ApiOperation("/根据渠道标识查询相关的记录")

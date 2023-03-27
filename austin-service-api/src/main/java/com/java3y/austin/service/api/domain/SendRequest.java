@@ -37,7 +37,7 @@ public class SendRequest {
      * 消息相关的参数
      * 当业务类型为"send"，必传
      */
-    private MessageParam messageParam;
+    private MessageSendParam messageSendParam;
 
 
 }

@@ -3,7 +3,7 @@ package com.java3y.austin.support.pending;
 import cn.hutool.core.collection.CollUtil;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
-import com.java3y.austin.support.config.SupportThreadPoolConfig;
+import com.java3y.austin.support.config.threadpool.SupportThreadPoolConfig;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 

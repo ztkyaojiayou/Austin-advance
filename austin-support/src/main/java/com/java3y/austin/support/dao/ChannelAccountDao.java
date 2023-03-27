@@ -16,7 +16,7 @@ public interface ChannelAccountDao extends JpaRepository<ChannelAccount, Long> {
 
     /**
      * 查询 列表
-     *
+     * 注意：这里的方法名应该是springData的一种约定！！！
      * @param deleted     0：未删除 1：删除
      * @param channelType 渠道值
      * @param creator     创建者

@@ -1,8 +1,8 @@
 package com.java3y.austin.service.api.impl.service;
 
-import com.java3y.austin.support.pipeline.BusinessProcess;
-import com.java3y.austin.support.pipeline.ProcessController;
-import com.java3y.austin.support.pipeline.ProcessTemplate;
+import com.java3y.austin.support.pipeline.MessageSendStep;
+import com.java3y.austin.support.pipeline.MessageSendHandler;
+import com.java3y.austin.support.pipeline.MessageSendStepTemplate;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,16 +16,16 @@ import java.util.Map;
 class SendServiceImplTest {
 
     @Spy
-    private ProcessController processController;
+    private MessageSendHandler messageSendHandler;
 
     @Mock
-    private Map<String, ProcessTemplate> templateConfig;
+    private Map<String, MessageSendStepTemplate> templateConfig;
 
     @Spy
-    private ProcessTemplate processTemplate;
+    private MessageSendStepTemplate messageSendStepTemplate;
 
     @Mock
-    private BusinessProcess businessProcess;
+    private MessageSendStep messageSendStep;
 
     @InjectMocks
     private SendServiceImpl sendServiceImplUnderTest;

@@ -14,6 +14,7 @@ import java.io.StringReader;
 import java.util.Properties;
 
 /**
+ * Nacos工具类--主要是获取配置信息
  * @program: austin
  * @description:
  * @author: Giorno
