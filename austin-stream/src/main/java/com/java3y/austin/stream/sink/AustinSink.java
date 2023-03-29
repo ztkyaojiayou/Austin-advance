@@ -23,8 +23,10 @@ import java.util.List;
 public class AustinSink implements SinkFunction<AnchorInfo> {
 
     @Override
-    public void invoke(AnchorInfo anchorInfo, Context context) throws Exception {
+    public void invoke(AnchorInfo anchorInfo, Context context) {
+        //1.实时数据存入Redis
         realTimeData(anchorInfo);
+        //2.离线数据存入hive
         offlineDate(anchorInfo);
     }
 
@@ -38,7 +40,10 @@ public class AustinSink implements SinkFunction<AnchorInfo> {
      */
     private void realTimeData(AnchorInfo info) {
         try {
+            //执行redis异步操作
+            //
             LettuceRedisUtils.pipeline(redisAsyncCommands -> {
+                //用于存储redis异步操作的结果
                 List<RedisFuture<?>> redisFutures = new ArrayList<>();
                 /**
                  * 1.构建userId维度的链路信息 数据结构list:{key,list}
@@ -46,7 +51,9 @@ public class AustinSink implements SinkFunction<AnchorInfo> {
                  */
                 SimpleAnchorInfo simpleAnchorInfo = SimpleAnchorInfo.builder().businessId(info.getBusinessId()).state(info.getState()).timestamp(info.getLogTimestamp()).build();
                 for (String id : info.getIds()) {
+                    //1.使用list数据结构存储，存的是字节？
                     redisFutures.add(redisAsyncCommands.lpush(id.getBytes(), JSON.toJSONString(simpleAnchorInfo).getBytes()));
+                    //2.数量级大，只保留当天
                     redisFutures.add(redisAsyncCommands.expire(id.getBytes(), (DateUtil.endOfDay(new Date()).getTime() - DateUtil.current()) / 1000));
                 }
 
@@ -56,6 +63,7 @@ public class AustinSink implements SinkFunction<AnchorInfo> {
                  */
                 redisFutures.add(redisAsyncCommands.hincrby(String.valueOf(info.getBusinessId()).getBytes(),
                         String.valueOf(info.getState()).getBytes(), info.getIds().size()));
+                //数量级小，保留30天
                 redisFutures.add(redisAsyncCommands.expire(String.valueOf(info.getBusinessId()).getBytes(),
                         ((DateUtil.offsetDay(new Date(), 30).getTime()) / 1000) - DateUtil.currentSeconds()));
 
@@ -73,7 +81,7 @@ public class AustinSink implements SinkFunction<AnchorInfo> {
      * @param anchorInfo
      */
     private void offlineDate(AnchorInfo anchorInfo) {
-
+// todo
     }
 
 

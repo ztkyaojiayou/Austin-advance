@@ -10,7 +10,7 @@
         <module>austin-service-api-impl</module>
         <module>austin-common</module>
         <module>austin-support</module>
-        <module>austin-msgSendChannelHandler</module>
+        <module>austin-handler</module>
         <module>austin-cron</module>
         <module>austin-stream</module>
         <module>austin-data-house</module>
@@ -185,7 +185,7 @@
                 <version>${weixin-java}</version>
             </dependency>
 
-            <!--动态线程池引入-->
+            <!--动态线程池引入_使用apollo作为配置中心-->
             <dependency>
                 <groupId>io.github.lyh200</groupId>
                 <artifactId>dynamic-tp-spring-boot-starter-apollo</artifactId>

@@ -22,7 +22,7 @@
         -->
         <dependency>
             <groupId>com.java3y.austin</groupId>
-            <artifactId>austin-msgSendChannelHandler</artifactId>
+            <artifactId>austin-handler</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

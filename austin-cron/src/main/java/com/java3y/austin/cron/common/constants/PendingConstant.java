@@ -1,4 +1,4 @@
-package com.java3y.austin.cron.constants;
+package com.java3y.austin.cron.common.constants;
 
 /**
  * @author 3y

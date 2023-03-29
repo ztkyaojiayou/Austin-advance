@@ -2,7 +2,7 @@ package com.java3y.austin.handler.messageconsume.messagereceiver.springeventbus;
 
 import com.alibaba.fastjson.JSON;
 import com.java3y.austin.common.domain.MessageInfo;
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import com.java3y.austin.support.domain.MessageTemplate;
 import com.java3y.austin.support.messagesend.springeventbus.AustinSpringEventBusEvent;
 import org.springframework.beans.factory.annotation.Autowired;

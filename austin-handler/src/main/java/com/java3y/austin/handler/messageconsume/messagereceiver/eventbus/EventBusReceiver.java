@@ -3,7 +3,7 @@ package com.java3y.austin.handler.messageconsume.messagereceiver.eventbus;
 import com.google.common.eventbus.Subscribe;
 import com.java3y.austin.common.domain.MessageInfo;
 import com.java3y.austin.handler.messageconsume.consume.ConsumeService;
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import com.java3y.austin.support.domain.MessageTemplate;
 import com.java3y.austin.support.messagesend.eventbus.EventBusListener;
 import org.springframework.beans.factory.annotation.Autowired;

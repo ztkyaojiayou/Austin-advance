@@ -35,15 +35,16 @@ public class LettuceRedisUtils {
 
 
     /**
-     * 封装pipeline操作
+     * 封装pipeline操作（即批量操作）
+     * 使用Lettuce的异步操作！！！
      */
     public static void pipeline(RedisPipelineCallBack pipelineCallBack) {
         StatefulRedisConnection<byte[], byte[]> connect = redisClient.connect(new ByteArrayCodec());
         RedisAsyncCommands<byte[], byte[]> commands = connect.async();
-
+        //执行redis异步操作，返回异步结果
         List<RedisFuture<?>> futures = pipelineCallBack.invoke(commands);
-
         commands.flushCommands();
+        //等待
         LettuceFutures.awaitAll(10, TimeUnit.SECONDS,
                 futures.toArray(new RedisFuture[futures.size()]));
         connect.close();

@@ -3,7 +3,7 @@ package com.java3y.austin.support.messagesend.eventbus;
 import com.alibaba.fastjson.JSON;
 import com.google.common.eventbus.EventBus;
 import com.java3y.austin.common.domain.MessageInfo;
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import com.java3y.austin.support.domain.MessageTemplate;
 import com.java3y.austin.support.messagesend.SendMqService;
 import lombok.extern.slf4j.Slf4j;

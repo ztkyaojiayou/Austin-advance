@@ -1,4 +1,4 @@
-package com.java3y.austin.cron.dto.getui;
+package com.java3y.austin.cron.handler.dto.getui;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;

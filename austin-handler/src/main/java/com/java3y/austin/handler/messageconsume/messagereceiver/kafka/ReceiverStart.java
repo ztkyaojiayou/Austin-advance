@@ -1,7 +1,7 @@
 package com.java3y.austin.handler.messageconsume.messagereceiver.kafka;
 
 import com.java3y.austin.handler.utils.GroupIdMappingUtils;
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.header.Header;
 import org.springframework.beans.factory.annotation.Autowired;

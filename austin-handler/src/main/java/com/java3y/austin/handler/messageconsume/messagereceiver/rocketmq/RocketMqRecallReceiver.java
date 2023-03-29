@@ -2,7 +2,7 @@ package com.java3y.austin.handler.messageconsume.messagereceiver.rocketmq;
 
 import com.alibaba.fastjson.JSON;
 import com.java3y.austin.handler.messageconsume.consume.ConsumeService;
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import com.java3y.austin.support.domain.MessageTemplate;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;

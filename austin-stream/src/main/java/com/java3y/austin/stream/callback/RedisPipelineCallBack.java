@@ -6,6 +6,7 @@ import io.lettuce.core.api.async.RedisAsyncCommands;
 import java.util.List;
 
 /**
+ * redis的异步操作接口，并返回其结果
  * redis pipeline接口定义
  *
  * @author 3y
@@ -14,7 +15,7 @@ public interface RedisPipelineCallBack {
 
     /**
      * 具体执行逻辑
-     *
+     * 使用Lettuce的异步操作！！！
      * @param redisAsyncCommands
      * @return
      */

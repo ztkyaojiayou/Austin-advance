@@ -2,7 +2,7 @@ package com.java3y.austin.handler.messageconsume.messagereceiver.springeventbus;
 
 import com.java3y.austin.common.domain.MessageInfo;
 import com.java3y.austin.handler.messageconsume.consume.ConsumeService;
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import com.java3y.austin.support.domain.MessageTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

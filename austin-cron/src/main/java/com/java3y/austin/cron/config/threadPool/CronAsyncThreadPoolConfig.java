@@ -1,4 +1,4 @@
-package com.java3y.austin.cron.config;
+package com.java3y.austin.cron.config.threadPool;
 
 import cn.hutool.core.thread.ExecutorBuilder;
 import com.dtp.common.em.QueueTypeEnum;

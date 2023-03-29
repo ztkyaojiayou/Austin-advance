@@ -1,4 +1,4 @@
-package com.java3y.austin.support.constans;
+package com.java3y.austin.support.common.constans;
 
 
 /**

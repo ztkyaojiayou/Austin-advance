@@ -1,6 +1,6 @@
 package com.java3y.austin.support.messagesend.rocketmq;
 
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import com.java3y.austin.support.messagesend.SendMqService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

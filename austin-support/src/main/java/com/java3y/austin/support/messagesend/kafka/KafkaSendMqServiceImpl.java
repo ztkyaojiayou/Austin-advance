@@ -1,7 +1,7 @@
 package com.java3y.austin.support.messagesend.kafka;
 
 import cn.hutool.core.util.StrUtil;
-import com.java3y.austin.support.constans.MessageQueuePipeline;
+import com.java3y.austin.support.common.constans.MessageQueuePipeline;
 import com.java3y.austin.support.messagesend.SendMqService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
