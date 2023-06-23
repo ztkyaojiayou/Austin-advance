@@ -22,7 +22,7 @@ import java.util.Objects;
 
 /**
  * 获取数据接口（全链路追踪)
- *
+ * 简单的crud
  * @author 3y
  */
 @Slf4j

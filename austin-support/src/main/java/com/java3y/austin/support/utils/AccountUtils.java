@@ -58,6 +58,7 @@ public class AccountUtils {
      * 微信服务号：返回 WxMpService
      * 其他渠道：返回XXXAccount账号对象
      *
+     * 使用了工厂设计模式！！！
      * @param sendAccountId
      * @param clazz
      * @param <T>
@@ -70,6 +71,7 @@ public class AccountUtils {
             if (optionalChannelAccount.isPresent()) {
                 ChannelAccount channelAccount = optionalChannelAccount.get();
                 if (clazz.equals(WxMaService.class)) {
+                    //computeIfAbsent:判断K是否存在V，若不存在，则把Lambda运行后结果存入Map作为V，即新创建一个V对象（即初始化），最后返回V
                     return (T) ConcurrentHashMapUtils.computeIfAbsent(miniProgramServiceMap, channelAccount, account -> initMiniProgramService(JSON.parseObject(account.getAccountConfig(), WeChatMiniProgramAccount.class)));
                 } else if (clazz.equals(WxMpService.class)) {
                     return (T) ConcurrentHashMapUtils.computeIfAbsent(officialAccountServiceMap, channelAccount, account -> initOfficialAccountService(JSON.parseObject(account.getAccountConfig(), WeChatOfficialAccount.class)));

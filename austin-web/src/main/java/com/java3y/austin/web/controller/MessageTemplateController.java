@@ -40,7 +40,8 @@ import java.util.stream.Collectors;
 
 /**
  * 消息模板管理Controller
- *
+ * 基本也是crud，但有两个核心方法，也即消息的发送和撤回，务必掌握！！！
+ * 同时，使用api的方式来管理定时任务的启动和暂停也需要重点掌握！
  * @author 3y
  */
 @Slf4j
@@ -155,7 +156,7 @@ public class MessageTemplateController {
 
 
     /**
-     * 撤回接口
+     * 撤回接口--也是核心接口！！！
      */
     @PostMapping("recall/{id}")
     @ApiOperation("/撤回消息接口")

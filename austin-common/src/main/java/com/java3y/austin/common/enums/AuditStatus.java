@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
+ * 模板状态
  * @author 3y
  * @date 2022/1/22
  */

@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 素材管理接口
- *
+ * 主要了解如何将文件传到不同的文件服务端的api调用
  * @author 3y
  */
 @Slf4j
@@ -35,7 +35,7 @@ public class MaterialController {
     /**
      * 素材上传接口
      *
-     * @param file        文件内容
+     * @param file        上传的文件
      * @param sendAccount 发送账号
      * @param sendChannel 发送渠道
      * @param fileType    文件类型
@@ -44,6 +44,7 @@ public class MaterialController {
     @PostMapping("/upload")
     @ApiOperation("/素材上传接口")
     public BasicResultVO uploadMaterial(@RequestParam("file") MultipartFile file, String sendAccount, Integer sendChannel, String fileType) {
+        //按发送渠道分别上传
         if (ChannelType.DING_DING_WORK_NOTICE.getCode().equals(sendChannel)) {
             return materialService.dingDingMaterialUpload(file, sendAccount, fileType);
         } else if (ChannelType.ENTERPRISE_WE_CHAT_ROBOT.getCode().equals(sendChannel)) {

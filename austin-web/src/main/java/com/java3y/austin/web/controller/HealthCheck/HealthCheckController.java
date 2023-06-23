@@ -1,4 +1,4 @@
-package com.java3y.austin.web.controller;
+package com.java3y.austin.web.controller.HealthCheck;
 
 
 import io.swagger.annotations.Api;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @Api("健康检测")
-public class HealthController {
+public class HealthCheckController {
     @GetMapping("/")
     @ApiOperation("/健康检测")
     public String health() {

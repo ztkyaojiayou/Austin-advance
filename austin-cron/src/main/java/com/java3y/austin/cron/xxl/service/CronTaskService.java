@@ -18,7 +18,7 @@ public interface CronTaskService {
      * @param xxlJobInfo
      * @return 新增时返回任务Id，修改时无返回
      */
-    BasicResultVO saveCronTask(XxlJobInfo xxlJobInfo);
+    BasicResultVO addOrUpdateCronTask(XxlJobInfo xxlJobInfo);
 
     /**
      * 删除定时任务
@@ -47,7 +47,7 @@ public interface CronTaskService {
 
 
     /**
-     * 得到执行器Id
+     * 获取执行器Id
      *
      * @param appName
      * @param title

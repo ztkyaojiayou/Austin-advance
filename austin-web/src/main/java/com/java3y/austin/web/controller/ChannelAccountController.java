@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 
 /**
  * 渠道账号管理接口
- *
+ * 简单的crud
  * @author 3y
  */
 @Slf4j
